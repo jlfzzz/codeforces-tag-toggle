@@ -16,6 +16,7 @@ A Tampermonkey/Greasemonkey userscript that allows you to toggle the visibility 
 
 ## Note: The toggle button to show/hide tags appears at the top-right corner of the page. Please make sure you have installed the Tampermonkey or Greasemonkey browser extension to use this script.
 
+## 切换按钮会显示在页面右上角。请确保你已安装 Tampermonkey 或 Greasemonkey 浏览器扩展，以正常使用此脚本。
 
 # Feel free to modify and distribute!
 

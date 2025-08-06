@@ -11,7 +11,7 @@ A Tampermonkey/Greasemonkey userscript that allows you to toggle the visibility 
 ## Installation
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://www.greasespot.net/) browser extension
-2. Click [Install Script](https://raw.githubusercontent.com/你的用户名/codeforces-tag-toggle/main/codeforces-tag-toggle.user.js)
+2. Click [Install Script](https://github.com/sof1azzz/codeforces-tag-toggle/raw/refs/heads/main/codeforces-tag-toggle.user.js)
 3. Click "Install" when prompted
 
 

@@ -4,8 +4,8 @@ A Tampermonkey/Greasemonkey userscript that allows you to toggle the visibility 
 
 ## Features
 
-- 🏷️ Hide/show problem tags with one click
-- ⭐ Always keep difficulty ratings (*xxxx) visible
+- Hide/show problem tags with one click
+- Always keep difficulty ratings (*xxxx) visible
 
 
 ## Installation
@@ -13,6 +13,8 @@ A Tampermonkey/Greasemonkey userscript that allows you to toggle the visibility 
 1. Install [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://www.greasespot.net/) browser extension
 2. Click [Install Script](https://github.com/sof1azzz/codeforces-tag-toggle/raw/refs/heads/main/codeforces-tag-toggle.user.js)
 3. Click "Install" when prompted
+
+## Note: The toggle button to show/hide tags appears at the top-right corner of the page. Please make sure you have installed the Tampermonkey or Greasemonkey browser extension to use this script.
 
 
 # Feel free to modify and distribute!

@@ -11,7 +11,7 @@ A Tampermonkey/Greasemonkey userscript that allows you to toggle the visibility 
 ## Installation
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://www.greasespot.net/) browser extension
-2. Click [Install Script](https://github.com/sof1azzz/codeforces-tag-toggle/raw/refs/heads/main/codeforces-tag-toggle.user.js)
+2. Click [Install Script](https://github.com/jlfzzz/codeforces-tag-toggle/raw/refs/heads/main/codeforces-tag-toggle.user.js)
 3. Click "Install" when prompted
 
 ## Note: The toggle button to show/hide tags appears at the top-right corner of the page. Please make sure you have installed the Tampermonkey or Greasemonkey browser extension to use this script.

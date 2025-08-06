@@ -2,7 +2,7 @@
 // @name         Codeforces Tag Toggle (Improved)
 // @namespace    http://tampermonkey.net/
 // @version      2.0
-// @description  Toggle visibility of problem tags on Codeforces (更稳定的版本)
+// @description  Toggle visibility of problem tags on Codeforces 
 // @match        https://codeforces.com/contest/*/problem/*
 // @match        https://codeforces.com/problemset/problem/*
 // @grant        none
@@ -16,11 +16,9 @@
   let tagElements = [];
   let hidden = true;
 
-  // 更灵活的标签容器查找
   function findTagElements() {
     const elements = [];
 
-    // 方法1: 通过 sidebox 查找
     const sideboxes = document.querySelectorAll(".sidebox");
     for (const box of sideboxes) {
       const caption = box.querySelector(".caption.titled");
@@ -31,7 +29,6 @@
       }
     }
 
-    // 方法2: 直接查找所有 tag-box (备用方案)
     if (elements.length === 0) {
       const allTagBoxes = document.querySelectorAll(".tag-box");
       allTagBoxes.forEach((span) => elements.push(span));
@@ -39,13 +36,10 @@
 
     return elements;
   }
-
-  // 获取标签的容器元素
+  
   function getTagContainer(tagElement) {
-    // 寻找合适的父元素来隐藏/显示
     let parent = tagElement.parentElement;
 
-    // 如果父元素是 span 或其他内联元素，继续向上查找
     while (
       parent &&
       (parent.tagName === "SPAN" ||
@@ -57,12 +51,10 @@
     return parent || tagElement;
   }
 
-  // 判断是否为难度标签
   function isDifficultyTag(tagText) {
     return tagText.trim().startsWith("*");
   }
 
-  // 切换标签显示状态
   function toggleTags() {
     hidden = !hidden;
 
@@ -76,7 +68,6 @@
     updateButtonAppearance();
   }
 
-  // 更新按钮外观
   function updateButtonAppearance() {
     if (!button) return;
 
@@ -91,9 +82,8 @@
     }
   }
 
-  // 创建切换按钮
   function createToggleButton() {
-    if (button) return; // 避免重复创建
+    if (button) return;
 
     button = document.createElement("button");
 
@@ -117,10 +107,8 @@
       textAlign: "center",
     });
 
-    // 初始化按钮外观
     updateButtonAppearance();
 
-    // 添加悬停和活跃状态效果
     button.addEventListener("mouseenter", () => {
       button.style.transform = "translateY(-1px)";
       button.style.boxShadow = "0 4px 12px rgba(0,0,0,0.25)";
@@ -144,7 +132,6 @@
     });
 
     button.addEventListener("click", () => {
-      // 添加点击动画效果
       button.style.transform = "scale(0.95)";
       setTimeout(() => {
         button.style.transform = "";
@@ -156,14 +143,12 @@
     document.body.appendChild(button);
   }
 
-  // 初始化函数
   function initialize() {
     if (isInitialized) return;
 
     const tagSpans = findTagElements();
-    if (tagSpans.length === 0) return; // 如果找不到标签，不初始化
+    if (tagSpans.length === 0) return;
 
-    // 准备标签数据
     tagElements = tagSpans.map((span) => {
       const tagText = span.textContent || "";
       const isDifficulty = isDifficultyTag(tagText);
@@ -189,12 +174,10 @@
     console.log("Codeforces Tag Toggle initialized successfully");
   }
 
-  // 使用 MutationObserver 监听 DOM 变化（处理动态加载）
   function observeChanges() {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
-          // 检查是否有新的标签元素被添加
           const hasTagElements = Array.from(mutation.addedNodes).some(
             (node) => {
               return (
@@ -217,11 +200,9 @@
       subtree: true,
     });
 
-    // 5秒后停止观察（避免无限监听）
     setTimeout(() => observer.disconnect(), 5000);
   }
 
-  // 多种初始化时机
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initialize);
   } else {
